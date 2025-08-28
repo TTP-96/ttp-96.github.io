@@ -1,17 +1,17 @@
 ---
 layout: default
 title: Condensed Matter
+breadcrumbs: true
 ---
-
-{% include breadcrumbs.html %}
 
 # Condensed Matter
 
 ## Pages in this section
-{% assign section = "/physics/condensed-matter/" %}
+{% assign section = '/physics/condensed-matter/' %}
 <ul>
-{% assign pages_here = site.topics | where_exp: "p", "p.url != section and p.url contains section" %}
-{% for p in pages_here %}
-  <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+{% for p in site.topics %}
+  {% if p.url != section and p.url contains section %}
+    <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+  {% endif %}
 {% endfor %}
 </ul>
