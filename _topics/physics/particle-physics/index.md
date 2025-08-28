@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Particle Physics
+permalink: /physics/particle-physics/
+breadcrumbs: true
 ---
-
-{% include breadcrumbs.html %}
 
 # Particle Physics

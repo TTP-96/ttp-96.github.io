@@ -6,4 +6,4 @@ title: Home
 # Welcome
 Pick a topic:
 
-- [Physics](/physics/)
+- [Physics]({{ '/physics/' | relative_url }})
