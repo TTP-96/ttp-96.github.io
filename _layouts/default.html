@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+    {% if page.title %}
+      {{ page.title }} · {{ site.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Simple styling -->
+  <style>
+    body { font-family: sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    nav a { text-decoration: none; margin-right: 1rem; }
+    nav a:hover { text-decoration: underline; }
+    hr { margin: 1.5rem 0; }
+    header, footer { color: #666; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Site title -->
+  <header>
+    <h1><a href="{{ "/" | relative_url }}">{{ site.title }}</a></h1>
+    <p>{{ site.description }}</p>
+  </header>
+
+  <!-- Top navigation -->
+  {% include nav.html %}
+
+  <!-- Optional breadcrumbs (only if you include them in your pages) -->
+  {% if page.breadcrumbs %}
+    {% include breadcrumbs.html %}
+  {% endif %}
+
+  <!-- Main content -->
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <hr>
+    <p>&copy; {{ "now" | date: "%Y" }} {{ site.title }}</p>
+  </footer>
+</body>
+</html>

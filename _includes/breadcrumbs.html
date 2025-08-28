@@ -1,0 +1,9 @@
+{% assign segs = page.url | split: "/" | reject: "" %}
+<p style="font-size:0.9rem;color:#666;">
+  <a href="{{ "/" | relative_url }}">Home</a>
+  {% capture path %}{% endcapture %}
+  {% for s in segs %}
+    {% capture path %}{{ path }}/{{ s }}{% endcapture %}
+    &raquo; <a href="{{ path | relative_url }}">{{ s | replace: "-", " " | capitalize }}</a>
+  {% endfor %}
+</p>

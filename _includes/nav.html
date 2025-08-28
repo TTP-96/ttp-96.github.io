@@ -1,0 +1,12 @@
+<nav style="display:flex; gap:1rem; flex-wrap:wrap;">
+  {% assign items = site.data.nav %}
+  {% for item in items %}
+    <span><a href="{{ item.url | relative_url }}">{{ item.title }}</a></span>
+    {% if item.children %}
+      {% for child in item.children %}
+        <span>· <a href="{{ child.url | relative_url }}">{{ child.title }}</a></span>
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</nav>
+<hr>
